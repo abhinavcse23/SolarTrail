@@ -18,7 +18,7 @@
             </div>
             <div class="header">
                 <h1>Today's Priorities</h1>
-                <p>Monday, July 14, 2025</p>
+                <p id="current-date">Monday, July 14, 2025</p>
             </div>
             <div class="content">
                 <div class="priority-card">
@@ -413,6 +413,15 @@ Client feedback: Very satisfied with service quality.</textarea>
     </div>
 
     <script>
+        const today = new Date();
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
+        document.getElementById("current-date").innerText = today.toLocaleDateString('en-US', options);
+
         function showScreen(screenIndex) {
             // Hide all screens
             const screens = document.querySelectorAll('.screen');
